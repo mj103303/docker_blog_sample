@@ -1,0 +1,16 @@
+version: "3"
+
+servieces:
+  kpt_intelli_design:
+    build: ./kpt_intelli_design
+    container_name: kpt_intelli_design
+    restart: always
+    expose:
+      - "5002"
+
+  nginx:
+    build: ./nginx
+    container_name: nginx-kpt-kpt_intelli
+    restart: always
+    ports:
+      - "8002:8002"
